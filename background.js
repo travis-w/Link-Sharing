@@ -1,7 +1,7 @@
 //initialize cloudmine.me account
 var ws = new cloudmine.WebService({
-	appid: '3ada4699731e48f4bad21395fbe949ab',
-	apikey: '095136cb56ce4a62964e7f09aff0c860'
+	appid: '',
+	apikey: ''
 });
 
 function getLatest() {
