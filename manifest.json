@@ -1,7 +1,7 @@
 {
   // Required
   "name": "Link Sharing",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "manifest_version": 2,
   "description": "Link sharing resource",
   //"icons": { ... },

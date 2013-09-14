@@ -1,21 +1,26 @@
-var tabUrl, 
-	tabName, 
-	latestLink;
+//////////////////////////////////////
+//           background.js          //
+//----------------------------------//
+//  -Purpose: to start install file //
+//		if installing.  And to      //
+//      send Desktop Notifications  //
+//      when a new link is added    //
+//////////////////////////////////////
 
-//initialize cloudmine.me account
+//Initialize cloudmine.me account
 var ws = new cloudmine.WebService({
 	appid: localStorage["appId"],
 	apikey: localStorage["apiKey"]
 });
 
-//get current tab url and title
+//Get current tab URL and title
 chrome.tabs.query({ active: true, windowId: chrome.windows.WINDOW_ID_CURRENT }, function(tabArray) {
     var tab = tabArray[0];
     window.tabUrl = tab.url;
 	window.tabName = tab.title;
 });
 
-//add link into the cloudmine database
+//Add link into the cloudmine database
 function addLink() {
 	var timestamp = Math.round((new Date()).getTime() / 1000);
 	ws.set(null, {name: window.tabName, url: window.tabUrl, date: timestamp}).on('success', function(data, response) {
@@ -25,7 +30,7 @@ function addLink() {
 	});
 }
 
-//grabbing links from the cloudmine database		
+//Grabbing links from the cloudmine database		
 function getLinks() {
 	ws.get({limit: 5, sort: 'date:desc'}).on('success', function(data, response) {
 		var result = "";

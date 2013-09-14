@@ -1,3 +1,7 @@
+/*
+	CSS File used for install page
+*/
+
 html, body {
 	margin: 0em;
 	padding: 2em 0em 2em 0em;
@@ -7,16 +11,24 @@ img {
     border:1px solid #2D2D2D;
 }
 a:link {
-    color:#2D2D2D;
+    color:#533787;
+	font-weight: 600;
+	text-decoration: none;
 }
 a:visited {
-    color:#2D2D2D;
+    color:#533787;
+	font-weight: 600;
+	text-decoration: none;
 }
 a:hover {
-    color:#2D2D2D;
+    color:#533787;
+	font-weight: 600;
+	text-decoration: underline;
 }  
 a:active {
-    color:#2D2D2D;
+    color:#533787;
+	font-weight: 600;
+	text-decoration: none;
 }
 
 .status {
