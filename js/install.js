@@ -18,6 +18,9 @@ function install() {
 	localStorage["bitPixelCode"] = bitPixelCode;
 	localStorage["appId"] = appId;
 	localStorage["apiKey"] = apiKey;
+	
+	var bkg = chrome.extension.getBackgroundPage();
+	bkg.location.reload();
 }
 
 //Chrome Extensions dont like any JS inside HTML:
@@ -26,4 +29,13 @@ jQuery(document).ready(function(){
 		install();
 		close();
 	});
+	if (localStorage["bitPixelCode"] != "" || localStorage["bitPixelCode"] != undefined) {
+		document.getElementById("BPCode").value = localStorage["bitPixelCode"];
+	}
+	if (localStorage["appId"] != "" || localStorage["appId"] != undefined) {
+		document.getElementById("cloudAppId").value = localStorage["appId"];
+	}
+	if (localStorage["apiKey"] != "" || localStorage["apiKey"] != undefined) {
+		document.getElementById("cloudApiKey").value = localStorage["apiKey"];
+	}
 })
