@@ -1,0 +1,23 @@
+img {
+    border:1px solid #2D2D2D;
+}
+a:link {
+    color:#2D2D2D;
+}
+a:visited {
+    color:#2D2D2D;
+}
+a:hover {
+    color:#2D2D2D;
+}  
+a:active {
+    color:#2D2D2D;
+}
+
+.status {
+	width: 200px;
+	background-color: #81EF5F;
+	border:1px solid #55A040;
+	text-align: center;
+	display: none;
+}

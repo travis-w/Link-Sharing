@@ -3,30 +3,8 @@
     <head>
 		<title>Link Sharing</title>
 		<link rel="stylesheet" href="css/style.css" type="text/css" />
-		<script type="text/javascript">
-			alert(localStorage["apiKey"]);
-			function popUp(url, width, height) {
-				newwindow=window.open(url,'name','height=' +  height + ',width=' + width);
-				if (window.focus) {
-					newwindow.focus();
-				}
-				return false;
-			}
-			function install() {
-				var bitPixelCode,
-					appId,
-					apiKey;
-					
-				bitPixelCode = document.getElementById("BPCode").value;
-				appId = document.getElementById("cloudAppId").value;
-				apiKey = document.getElementById("cloudApiKey").value;
-				
-				//Set localStorage for later
-				localStorage["bitPixelCode"] = bitPixelCode;
-				localStorage["appId"] = appId;
-				localStorage["apiKey"] = apiKey;
-			}
-		</script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/install.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -55,7 +33,7 @@
 				2)Set up your CloudMine Account by following image ( <a href="images/howto.png" onclick="return popUp('images/howto.png', '1300', '700')" alt="Cloudmine Setup" />Click Here For Image</a> ). <br/>
 				Application ID: <input type="text" id="cloudAppId" /><br/>
 				API Key: <input type="text" id="cloudApiKey" /><br/>
-				<input type="button" value="Install" id="install" onClick="install()" />
+				<input type="button" value="Install" id="install" />
 			</div>
 			
 		</div>

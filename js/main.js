@@ -1,9 +1,11 @@
-var tabUrl, tabName, latestLink;
+var tabUrl, 
+	tabName, 
+	latestLink;
 
 //initialize cloudmine.me account
 var ws = new cloudmine.WebService({
-	appid: '3ada4699731e48f4bad21395fbe949ab',
-	apikey: '095136cb56ce4a62964e7f09aff0c860'
+	appid: localStorage["appId"],
+	apikey: localStorage["apiKey"]
 });
 
 //get current tab url and title
@@ -29,7 +31,7 @@ function getLinks() {
 		var result = "";
 		for (var i in data) {
 			if (data.hasOwnProperty(i)) {
-				result += "<a href='" + data[i].url + "' alt='" + data[i].name + "'><img title ='" + data[i].name + "' alt='" + data[i].name + "' src='http://api.screenshotmachine.com/?key=cde14e&url=" + data[i].url + "&size=S&format=PNG' /></a><br/>";
+				result += "<a href='" + data[i].url + "' alt='" + data[i].name + "'><img title ='" + data[i].name + "' alt='" + data[i].name + "' src='http://img.bitpixels.com/getthumbnail?code=" + localStorage["bitPixelCode"] + "&url=" + data[i].url + "&size=200&format=PNG' /></a><br/>";
 			}
 		}
 		$("#displayLinks").html(result);
