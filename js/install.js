@@ -36,15 +36,21 @@ jQuery(document).ready(function(){
 		install();
 		close();
 	});
+	$("#cloudMinePic").click(function() {
+		return popUp('images/howto.png', '1300', '700');
+	});
+	$("#bitPixelPic").click(function() {
+		return popUp('images/bitpixel.png', '800', '400');
+	});
 	
 	//Filling in forms with current values (for updating settings)
-	if (localStorage["bitPixelCode"] != "" || localStorage["bitPixelCode"] != undefined) {
+	if (localStorage["bitPixelCode"] != "" && localStorage["bitPixelCode"] != undefined) {
 		document.getElementById("BPCode").value = localStorage["bitPixelCode"];
 	}
-	if (localStorage["appId"] != "" || localStorage["appId"] != undefined) {
+	if (localStorage["appId"] != "" && localStorage["appId"] != undefined) {
 		document.getElementById("cloudAppId").value = localStorage["appId"];
 	}
-	if (localStorage["apiKey"] != "" || localStorage["apiKey"] != undefined) {
+	if (localStorage["apiKey"] != "" && localStorage["apiKey"] != undefined) {
 		document.getElementById("cloudApiKey").value = localStorage["apiKey"];
 	}
 })
