@@ -4,12 +4,27 @@
 		<title>Link Sharing</title>
 		<link rel="stylesheet" href="css/style.css" type="text/css" />
 		<script type="text/javascript">
-			function popitup(url, width, height) {
+			alert(localStorage["apiKey"]);
+			function popUp(url, width, height) {
 				newwindow=window.open(url,'name','height=' +  height + ',width=' + width);
 				if (window.focus) {
 					newwindow.focus();
 				}
 				return false;
+			}
+			function install() {
+				var bitPixelCode,
+					appId,
+					apiKey;
+					
+				bitPixelCode = document.getElementById("BPCode").value;
+				appId = document.getElementById("cloudAppId").value;
+				apiKey = document.getElementById("cloudApiKey").value;
+				
+				//Set localStorage for later
+				localStorage["bitPixelCode"] = bitPixelCode;
+				localStorage["appId"] = appId;
+				localStorage["apiKey"] = apiKey;
 			}
 		</script>
 	</head>
@@ -35,12 +50,12 @@
 			<h2>&nbsp;&nbsp;Instructions</h2>
 			<div class="content">
 				Once you get those two accounts here is how to go about setting the extension up:<br/>
-				1)Find your code for BitPixel and put it in the input below ( <a href="images/bitpixel.png" onclick="return popitup('images/bitpixel.png', '800', '400')" alt="BitPixel HowTo" title="BitPixel HowTo">Click Here For Image</a> ). <br/>
+				1)Find your code for BitPixel and put it in the input below ( <a href="images/bitpixel.png" onclick="return popUp('images/bitpixel.png', '800', '400')" alt="BitPixel HowTo" title="BitPixel HowTo">Click Here For Image</a> ). <br/>
 				BitPixel Code: <input type="text" id="BPCode" /><br/>
-				2)Set up your CloudMine Account by following image ( <a href="images/howto.png" onclick="return popitup('images/howto.png', '1300', '700')" alt="Cloudmine Setup" />Click Here For Image</a> ). <br/>
+				2)Set up your CloudMine Account by following image ( <a href="images/howto.png" onclick="return popUp('images/howto.png', '1300', '700')" alt="Cloudmine Setup" />Click Here For Image</a> ). <br/>
 				Application ID: <input type="text" id="cloudAppId" /><br/>
 				API Key: <input type="text" id="cloudApiKey" /><br/>
-				<input type="button" value="Install" id="install" />
+				<input type="button" value="Install" id="install" onClick="install()" />
 			</div>
 			
 		</div>

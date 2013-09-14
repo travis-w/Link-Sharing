@@ -1,7 +1,19 @@
+//Check if on install
+function install_notice() {
+	if (localStorage["install_time"]) {
+		return;
+	}
+
+	var now = new Date().getTime();
+	localStorage["install_time"] = now;
+	chrome.tabs.create({url: "install.html"});
+}
+install_notice();
+
 //initialize cloudmine.me account
 var ws = new cloudmine.WebService({
-	appid: '',
-	apikey: ''
+	appid: localStorage["appId"],
+	apikey: localStorage["apiKey"]
 });
 
 function getLatest() {

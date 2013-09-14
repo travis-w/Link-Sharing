@@ -1,13 +1,13 @@
 {
   // Required
-  "name": "Link Sharking",
+  "name": "Link Sharing",
   "version": "0.5.0",
   "manifest_version": 2,
-  "description": "Pocket, but better bithces",
+  "description": "Link sharing resource",
   //"icons": { ... },
   
   "browser_action": {
-    "default_icon": "icon19.png", 
+    "default_icon": "images/icon19.png", 
     "default_title": "Save Link",
 	"default_popup": "index.html"  
   },
@@ -26,6 +26,6 @@
   ],
   
   "web_accessible_resources": [
-    "icon19.png"
+    "images/icon19.png"
   ]
 }
